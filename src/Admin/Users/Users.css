@@ -1,0 +1,19 @@
+@media (max-width:768px) {
+    .users{
+        width: 350px;
+        overflow-x: auto;
+        white-space: nowrap;
+        margin: 20px auto;
+        min-height: 80vh;
+        border: 2px solid gray;
+    }
+}
+
+.users{
+    width: 400px;
+    
+    white-space: nowrap;
+    margin: 20px 20px;
+    min-height: 80vh;
+   
+}
