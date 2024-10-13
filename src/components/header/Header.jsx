@@ -1,25 +1,39 @@
-//import React from 'react';
+
+
+//import React, { useState } from 'react';
+import { useState } from "react";
 import "./Header.css";
 import { Link } from 'react-router-dom';
-const Header = ({isAuth}) => {
+
+const Header = ({ isAuth }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <header>
+      <div className="container">
         <div className="logo">Study-Zone</div>
-        <div className="link">
-            <Link to={"/"}>Home</Link>
-            <Link to={"/courses"}>Courses</Link>
-            <Link to={"/about"}>About</Link>
-            <Link to={"/contect"}>Contect</Link>
-            {
-              isAuth? ( <Link to={"/account"}>Account</Link>
-              ) : (  <Link to={"/login"}>
-                Login</Link>
-              )}
-
-
-        </div>
+        <button className="menu-toggle" onClick={toggleMenu}>
+          {menuOpen ? '✖' : '☰'}
+        </button>
+        <nav className={`nav-links ${menuOpen ? 'open' : ''}`}>
+          <Link to={"/"} onClick={() => setMenuOpen(false)}>Home</Link>
+          <Link to={"/courses"} onClick={() => setMenuOpen(false)}>Courses</Link>
+          <Link to={"/about"} onClick={() => setMenuOpen(false)}>About</Link>
+          <Link to={"/contect"} onClick={() => setMenuOpen(false)}>Contact</Link>
+          {isAuth ? (
+            <Link to={"/account"} onClick={() => setMenuOpen(false)}>Account</Link>
+          ) : (
+            <Link to={"/login"} onClick={() => setMenuOpen(false)}>Login</Link>
+          )}
+        </nav>
+      </div>
     </header>
   );
 };
 
 export default Header;
+

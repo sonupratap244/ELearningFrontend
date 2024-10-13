@@ -1,6 +1,6 @@
 //import React from 'react'
 import "./Testimonials.css";
-import myImage from "./image/myImage.jpg";
+import image from "./Image/image.jpg"
 import photo from "./Image/photo.jpg";
 import img from "./Image/img.jpg";
 
@@ -15,7 +15,7 @@ const Testimonials = () => {
           message:
             "This platform helped me learn so effectively. The courses are amazing and the instructors are top-notch.",
           
-          image: myImage,
+          image: image,
         },
         {
 
