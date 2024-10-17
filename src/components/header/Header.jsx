@@ -3,7 +3,7 @@
 //import React, { useState } from 'react';
 import { useState } from "react";
 import "./Header.css";
-import logo from './images/vsg.png';
+//import logo from './images/vsg.png';
 import { Link } from 'react-router-dom';
 
 const Header = ({ isAuth }) => {
@@ -16,7 +16,8 @@ const Header = ({ isAuth }) => {
   return (
     <header>
       <div className="container">
-        <div className="logo"><img src={logo} alt="Logo" /></div>
+{/*         <div className="logo"><img src={logo} alt="Logo" /></div> */}
+         <div className="logo">Study-Zone</div>
         <button className="menu-toggle" onClick={toggleMenu}>
           {menuOpen ? '✖' : '☰'}
         </button>
